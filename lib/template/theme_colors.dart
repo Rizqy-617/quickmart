@@ -40,6 +40,10 @@ class ThemeColors {
     return theme == ThemeScheme.light ? primaryWhite : primaryWhite;
   }
 
+  Color btnColorBlockTxt2(ThemeScheme theme) {
+    return theme == ThemeScheme.light ? primaryBlack : primaryWhite;
+  }
+
   Color primaryContainerColor(ThemeScheme theme) {
     return theme == ThemeScheme.light ? primaryContainerLight : primaryContainerDark;
   }

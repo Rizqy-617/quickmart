@@ -1,4 +1,5 @@
 import 'package:quickmart/store/config/app_state.dart';
+import 'package:quickmart/store/reducers/route_reducer.dart';
 import 'package:quickmart/store/reducers/theme_reducer.dart';
 import 'package:quickmart/store/reducers/user_reducer.dart';
 import 'package:redux/redux.dart';
@@ -25,6 +26,8 @@ AppState reducer(AppState state, dynamic action) {
   if (action is UserReducer) {
     return action.mapOperationToState(state);
   } else if (action is ThemeReducer) {
+    return action.mapOperationToState(state);
+  } else if (action is RouteReducer) {
     return action.mapOperationToState(state);
   }
 

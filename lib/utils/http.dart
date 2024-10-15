@@ -10,15 +10,20 @@ class Request {
     Dio dio = Dio();
     dio.options.connectTimeout = const Duration(milliseconds: 10000);
     dio.options.receiveTimeout = const Duration(milliseconds: 30000);
-    if (method == "GET") {
-      res = await dio.get(url);
-    } else {
-      res = await dio.post(url, data: postParam ?? {});
-    }
-    data = res.data;
-
-    if (data.containsKey("error")) {
-      throw Exception("${data["error"]}: ${data["message"]}");
+    try {
+      if (method == "GET") {
+        res = await dio.get(url);
+      } else {
+        res = await dio.post(url, data: postParam ?? {});
+      }
+      data = res.data;
+    } on DioException catch (e) {
+      if (e.type == DioExceptionType.connectionTimeout) {
+        throw("Timeout");
+      } 
+      if (e.type == DioExceptionType.connectionError) {
+        throw("Internet error, please check your connection");
+      }
     }
 
     return data;

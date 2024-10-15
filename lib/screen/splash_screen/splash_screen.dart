@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -25,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (hasToken) await UserViewModel.instance.refreshUserData();
       bool hasLogin = UserViewModel.instance.hasLogin();
       if (hasLogin) {
-        Navigator.pushReplacementNamed(context, RouteName.signUp);
+        Navigator.pushReplacementNamed(context, RouteName.home);
       } else {
         Navigator.pushReplacementNamed(context, RouteName.onBoarding);
       }

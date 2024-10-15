@@ -1,6 +1,7 @@
 import 'package:quickmart/models/user_model.dart';
 import 'package:quickmart/store/config/app_state.dart';
 import 'package:quickmart/store/reducers/reducer.dart';
+import 'package:quickmart/template/route.dart';
 import 'package:quickmart/template/theme_colors.dart';
 import 'package:quickmart/utils/secure_storage.dart';
 import 'package:redux/redux.dart';
@@ -16,7 +17,8 @@ class StoreConfig {
       reducer,
       initialState: AppState(
         user: User.init(),
-        scheme: index != null ? ThemeScheme.values[index] : ThemeScheme.light
+        scheme: index != null ? ThemeScheme.values[index] : ThemeScheme.light,
+        homeTab: HomeTab.home
       )
     );
   }

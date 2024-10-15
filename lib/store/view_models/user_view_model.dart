@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -23,7 +25,6 @@ class UserViewModel{
         "expiresInMins": 60
       }
     );
-    print(data);
     if (data.containsKey("accessToken") && data.containsKey("refreshToken")) {
       UserToken token = UserToken(
         refreshToken: data["accessToken"],
@@ -69,11 +70,9 @@ class UserViewModel{
         method: "GET",
       );
       String jsonData = jsonEncode(data);
-      print(jsonData);
       await SecureStorage.instance.updateToken(CacheKey.userData, jsonData);
       await refreshReduxStore();
     } on DioException catch (e) {
-      print("--0-0-0-0-0-0-0-0-0-0");
       print(e.message);
     }
   }

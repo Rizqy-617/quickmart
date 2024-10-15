@@ -75,7 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     ),
-                    Spacer(
+                    const Spacer(
                       flex: 1,
                     ),
                     Expanded(

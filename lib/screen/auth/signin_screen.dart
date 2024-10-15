@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, avoid_print
 
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/gestures.dart';
@@ -45,14 +45,14 @@ class _SigninScreenState extends State<SigninScreen> {
       await UserViewModel.instance.login(usernameController.text, passwordController.text);
       SmartDialog.dismiss();
       AwesomeDialog(
-            context: context,
-            dialogType: DialogType.info,
-            animType: AnimType.rightSlide,
-            title: 'Dialog Title',
-            desc: 'Dialog description here.............',
-            btnCancelOnPress: () {},
-            btnOkOnPress: () {},
-            ).show();
+        context: context,
+        dialogType: DialogType.success,
+        animType: AnimType.scale,
+        title: 'Login Success',
+      ).show().then((_) {
+        Navigator.pushReplacementNamed(context, RouteName.home);
+      });
+
     } catch (x) {
       SmartDialog.dismiss();
       AwesomeDialog(
