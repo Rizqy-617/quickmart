@@ -38,19 +38,19 @@ class User {
     );
   }
 
-  static User fromMap(Map userMap) {
+  static User fromMap(Map? userMap) {
     try {
       return User(
-        id: userMap["id"],
-        firstName: userMap["firstName"],
-        lastName: userMap["lastName"],
-        age: userMap["age"],
-        gender: userMap["gender"],
-        email: userMap["email"],
-        phone: userMap["phone"],
-        username: userMap["username"],
-        birthDate: userMap["birthDate"],
-        image: userMap["image"]
+        id: userMap?["id"],
+        firstName: userMap?["firstName"] ?? "",
+        lastName: userMap?["lastName"] ?? "",
+        age: userMap?["age"] ?? 0,
+        gender: userMap?["gender"] ?? "",
+        email: userMap?["email"] ?? "",
+        phone: userMap?["phone"] ?? "",
+        username: userMap?["username"] ?? "",
+        birthDate: userMap?["birthDate"] ?? "",
+        image: userMap?["image"] ?? ""
       );
     } catch (e) {
       return User.init();

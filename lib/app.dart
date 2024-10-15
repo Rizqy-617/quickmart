@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
-import 'package:quickmart/store/models/app_state.dart';
+import 'package:quickmart/store/config/app_state.dart';
 import 'package:quickmart/template/route.dart';
 import 'package:quickmart/utils/route_observer.dart';
 import 'package:redux/redux.dart';
@@ -20,7 +21,11 @@ class _ReduxAppState extends State<ReduxApp> {
     return StoreProvider(
       store: widget.store,
       child: MaterialApp(
-        navigatorObservers: [CustomRouteObserver()],
+        builder: FlutterSmartDialog.init(),
+        navigatorObservers: [
+          CustomRouteObserver(),
+          FlutterSmartDialog.observer
+        ],
         routes: route,
         initialRoute: "/",
       ),

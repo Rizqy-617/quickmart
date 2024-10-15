@@ -31,6 +31,18 @@ class ThemeColors {
   Color primaryBackgrounColor(ThemeScheme theme) {
     return theme == ThemeScheme.light ? primaryWhite : primaryBlack;
   }
+
+  Color btnColorBlock(ThemeScheme theme) {
+    return theme == ThemeScheme.light ? primaryBlack : primaryColorLight;
+  }
+
+  Color btnColorBlockTxt(ThemeScheme theme) {
+    return theme == ThemeScheme.light ? primaryWhite : primaryWhite;
+  }
+
+  Color primaryContainerColor(ThemeScheme theme) {
+    return theme == ThemeScheme.light ? primaryContainerLight : primaryContainerDark;
+  }
 }
 
 
