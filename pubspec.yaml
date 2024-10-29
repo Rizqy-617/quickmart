@@ -49,6 +49,7 @@ dependencies:
   card_swiper: ^3.0.1
   mutex: ^3.1.0
   pull_to_refresh: ^2.0.0
+  bulleted_list: ^0.0.1+0.1a
 
 dev_dependencies:
   flutter_test:

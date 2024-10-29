@@ -3,6 +3,9 @@ import 'package:quickmart/screen/auth/signin_screen.dart';
 import 'package:quickmart/screen/auth/signup_screen.dart';
 import 'package:quickmart/screen/home/home_main.dart';
 import 'package:quickmart/screen/onboarding_screen/onboarding_screen.dart';
+import 'package:quickmart/screen/settings/faq_screen.dart';
+import 'package:quickmart/screen/settings/privacy_screen.dart';
+import 'package:quickmart/screen/settings/term_condition_screen.dart';
 import 'package:quickmart/screen/splash_screen/splash_screen.dart';
 
 class RouteName {
@@ -11,6 +14,11 @@ class RouteName {
   static const String signUp = "/signup";
   static const String signIn = "/signin";
   static const String home = "/home";
+  
+  // Settings
+  static const String frequentlyAskScreen = "/frequentlyask";
+  static const String privacyPolicyScreen = "/privacyscreen";
+  static const String termsConditionsScreen = "/termconditionscreen";
 }
 
 final Map<String, Widget Function(BuildContext)> route = {
@@ -18,7 +26,10 @@ final Map<String, Widget Function(BuildContext)> route = {
   RouteName.onBoarding: (context) =>  const OnboardingScreen(),
   RouteName.signUp: (context) => const SignupScreen(),
   RouteName.signIn: (context) =>  const SigninScreen(),
-  RouteName.home: (context) => const HomeMain()
+  RouteName.home: (context) => const HomeMain(),
+  RouteName.frequentlyAskScreen: (context) => const FrequentlyAskScreen(),
+  RouteName.privacyPolicyScreen: (context) => const PrivacyPolicyScreen(),
+  RouteName.termsConditionsScreen: (context) => const TermConditionScreen()
 };
 
 enum HomeTab { home, categories, cart, wishlist, profile }

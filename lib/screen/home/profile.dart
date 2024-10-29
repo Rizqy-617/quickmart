@@ -5,6 +5,7 @@ import 'package:quickmart/store/action/action.dart';
 import 'package:quickmart/store/reducers/reducer.dart';
 import 'package:quickmart/store/reducers/theme_reducer.dart';
 import 'package:quickmart/store/reducers/user_reducer.dart';
+import 'package:quickmart/template/route.dart';
 import 'package:quickmart/template/theme_colors.dart';
 import 'package:quickmart/widget/list_item_profile.dart';
 
@@ -172,7 +173,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           width: 25,
                           height: 25,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, RouteName.privacyPolicyScreen);
+                        },
                         title: "Privacy Policy",
                         action: Icon(
                           Icons.arrow_forward_ios,
@@ -186,7 +189,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           width: 25,
                           height: 25,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, RouteName.termsConditionsScreen);
+                        },
                         title: "Term & Conditions",
                         action: Icon(
                           Icons.arrow_forward_ios,
@@ -200,7 +205,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           width: 25,
                           height: 25,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, RouteName.frequentlyAskScreen);
+                        },
                         title: "Frequently Ask Questions",
                         action: Icon(
                           Icons.arrow_forward_ios,
