@@ -1,0 +1,54 @@
+String categoryIcon(String category) {
+  switch(category) {
+    case "beauty":
+      return "assets/icon/category_icon/beauty.png";
+    case "fragrances":
+      return "assets/icon/category_icon/fragrance.png";
+    case "furniture":
+      return "assets/icon/category_icon/furniture.png";
+    case "groceries":
+      return "assets/icon/category_icon/groceries.png";
+    case "home-decoration":
+      return "assets/icon/category_icon/home-decoration.png";
+    case "kitchen-accessories":
+      return "assets/icon/category_icon/kitchen-accessories.png";
+    case "laptops":
+      return "assets/icon/category_icon/laptop.png";
+    case "mens-shirts":
+      return "assets/icon/category_icon/man-shirt.png";
+    case "mens-shoes":
+      return "assets/icon/category_icon/man-shoes.png";
+    case "mens-watches":
+      return "assets/icon/category_icon/man-watch.png";
+    case "mobile-accessories":
+      return "assets/icon/category_icon/mobile-accessories.png";
+    case "motorcycle":
+      return "assets/icon/category_icon/motorcycle.png";
+    case "skin-care":
+      return "assets/icon/category_icon/skin-care.png";
+    case "smartphones":
+      return "assets/icon/category_icon/smartphone.png";
+    case "sport-accessories":
+      return "assets/icon/category_icon/sport-accessories.png";
+    case "sunglasses":
+      return "assets/icon/category_icon/sunglasses.png";
+    case "tablets":
+      return "assets/icon/category_icon/tablet.png";
+    case "tops":
+      return "assets/icon/category_icon/tops.png";
+    case "vehicle":
+      return "assets/icon/category_icon/vehicle.png";
+    case "womens-bags":
+      return "assets/icon/category_icon/women-bag.png";
+    case "womens-dresses":
+      return "assets/icon/category_icon/women-dresses.png";
+    case "womens-jewellery":
+      return "assets/icon/category_icon/women-jewelry.png";
+    case "womens-shoes":
+      return "assets/icon/category_icon/women-shoes.png";
+    case "womens-watches":
+      return "assets/icon/category_icon/women-watches.png";
+    default:
+      return "assets/icon/category_icon/beauty.png";
+  }
+}

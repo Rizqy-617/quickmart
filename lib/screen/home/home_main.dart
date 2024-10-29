@@ -29,8 +29,8 @@ class _HomeMainState extends State<HomeMain> {
   bool canPop = false;
 
   final List<Widget> children = [
-    const HomeScreen(),
-    const CategoriesScreen(),
+    HomeScreen(),
+    CategoriesScreen(),
     const CartScreen(),
     const WishlistScreen(),
     const ProfileScreen()

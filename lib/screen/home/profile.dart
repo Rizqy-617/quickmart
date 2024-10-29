@@ -4,6 +4,7 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:quickmart/store/action/action.dart';
 import 'package:quickmart/store/reducers/reducer.dart';
 import 'package:quickmart/store/reducers/theme_reducer.dart';
+import 'package:quickmart/store/reducers/user_reducer.dart';
 import 'package:quickmart/template/theme_colors.dart';
 import 'package:quickmart/widget/list_item_profile.dart';
 
@@ -70,10 +71,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       )
                     ],
                   ),
-                  Icon(
-                    FontAwesome.arrow_right_from_bracket_solid,
-                    size: 32,
-                    color: ThemeColors.primaryWhite,
+                  GestureDetector(
+                    onTap: () {
+                      store!.dispatch(UserReducer(action: ActionOperation.clearState, payload: context));
+                    },
+                    child: Icon(
+                      FontAwesome.arrow_right_from_bracket_solid,
+                      size: 32,
+                      color: ThemeColors.primaryWhite,
+                    ),
                   )
                 ],
               ),

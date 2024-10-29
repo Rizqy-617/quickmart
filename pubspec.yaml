@@ -46,6 +46,9 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   flutter_smart_dialog: ^4.9.8+3
   awesome_dialog: ^3.2.1
+  card_swiper: ^3.0.1
+  mutex: ^3.1.0
+  pull_to_refresh: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +84,7 @@ flutter:
     - assets/icon/app_icon/
     - assets/icon/misc/
     - assets/icon/onboarding/
+    - assets/icon/category_icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

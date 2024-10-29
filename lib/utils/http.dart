@@ -2,21 +2,27 @@ import 'package:dio/dio.dart';
 import 'package:quickmart/utils/secure_storage.dart';
 
 class Request {
-  static Future<Map> request({
-    String method = "POST", required String url, Map? postParam
+  static Future<dynamic> request({
+    String method = "POST", required String url, Map? postParam, Map<String, dynamic>? query
   }) async {
     Response res;
     Map data = {};
+    List datas = [];
     Dio dio = Dio();
     dio.options.connectTimeout = const Duration(milliseconds: 10000);
     dio.options.receiveTimeout = const Duration(milliseconds: 30000);
     try {
       if (method == "GET") {
-        res = await dio.get(url);
+        res = await dio.get(url, queryParameters: query ?? {});
       } else {
         res = await dio.post(url, data: postParam ?? {});
       }
-      data = res.data;
+      if (res.data is List) {
+        datas = res.data;
+        return datas;
+      } else {
+        data = res.data;
+      }
     } on DioException catch (e) {
       if (e.type == DioExceptionType.connectionTimeout) {
         throw("Timeout");
